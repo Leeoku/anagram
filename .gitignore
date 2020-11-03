@@ -190,3 +190,12 @@ yarn-error.log*
 
 #vscode
 .vscode
+
+### react ###
+.DS_*
+logs
+**/*.backup.*
+**/*.back.*
+
+node_modules
+bower_components
