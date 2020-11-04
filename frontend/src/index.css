@@ -23,9 +23,16 @@ code {
 }
 
 .anagrampage{
-  width: 80vw;
+  width: 30vw;
   display: grid;
   gap: 2rem;
   margin: 5rem auto;
-  max-width: 1200px;
 }
+
+/* .container {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: var(--max-width);
+  text-align: center;
+  margin-top: 5rem;
+} */
