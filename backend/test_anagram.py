@@ -1,7 +1,9 @@
 import unittest
 from anagram import AnagramCheck
+from collections import Counter
 
 class TestAnagramCheck(unittest.TestCase):
+    anagram_counter = Counter()
     def test_is_anagram(self):
         #Incorrect test case
         test_first_word = "wolf"
