@@ -9,24 +9,11 @@ class AnagramCheck:
         second_counter = Counter(second_word)
         self.anagram_counter[first_word, second_word] += 1
         return first_counter == second_counter
-    
+#Take the counter object of all words and return top searches    
     def get_anagram_count_top(self, n):
         return self.anagram_counter.most_common(n)
 
-
-# from collections import Counter
-# c = Counter()
-# class AnagramCheck:
-#     def is_anagram(self, first_word, second_word):
-#         c[first_word,second_word] +=1
-#         return c(first_word) == c(second_word), c
-
-
-# s = "wolf"
-# t= "owl"
-# AnagramCheck().is_anagram( s,t)
-
-
+# Alternate algorithim to determine if word is anagram
     # seen = {}
     # # add all of first_word to dict
     # for i in first_word:
