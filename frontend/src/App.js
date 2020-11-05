@@ -1,45 +1,36 @@
-import React from 'react'
-import { anagramList } from "./anagramlist";
-import {data} from "./data";
+import React, { useState } from "react";
 import AnagramCheck from "./components/AnagramCheck";
 import TopAnagrams from "./components/TopAnagrams";
-import TopAnagramTitle from "./components/TopAnagramTitle";
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           testfsda
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
+import axios from "axios";
 
 function App() {
+  /** Expected schema from Flask
+   * [[["wolf", "flow"], 4], [["on", "no"], 77]]
+   */
+  const [topAnagrams, setTopAnagrams] = useState([]);
+  function processYourResponse(response) {
+    //parse json into array
+    const cleanResponse = response["data"];
+    return cleanResponse;
+  }
+
+  function refreshAnagrams() {
+    axios.get("/top").then(
+      (response) => {
+        const updatedTopAnagrams = processYourResponse(response);
+        setTopAnagrams(updatedTopAnagrams);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  }
   return (
     <div className="anagrampage">
-      <AnagramCheck />
-      <TopAnagramTitle />
-      {/* {anagramList.map((anagramList) => {
-        return <TopAnagrams key={anagramList.id} {...anagramList} />;
-      })} */}
-      {/* {data.map((data)=>{
-        return <TopAnagrams />;
-      })} */}
-      <TopAnagrams/>
+      <AnagramCheck afterFormSubmit={() => refreshAnagrams()} />
+      <TopAnagrams anagrams={topAnagrams} />
     </div>
   );
 }
-
 
 export default App;

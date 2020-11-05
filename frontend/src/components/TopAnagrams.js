@@ -1,25 +1,22 @@
-import React, { useState } from "react";
-import { data } from "../data";
+import React from "react";
 
 const TopAnagrams = (props) => {
-  const [anagramSearches, setAnagramSearches] = useState(data);
-  console.log(anagramSearches);
-  //   const { firstWord, secondWord, count } = props;
+  const anagramSearches = props.anagrams;
   return (
     <div className="container">
-      {/* <p>First Word: {firstWord}</p>
-      <p>Second Word: {secondWord}</p>
-      <p>Count: {count}</p> */}
-      {/* <p>{anagramSearches}</p> */}
-      {anagramSearches.map((anagramSearches) => {
-        const words = anagramSearches[0];
-        const count = anagramSearches[1];
-        // console.log(words)
-        // console.log(count);
-        return (
-          <p>{words}{count}</p>
-        );
-      })}
+      <h2>Top Anagram Searches</h2>
+      <ol>
+        {anagramSearches.map((anagramSearches, index) => {
+          const firstWord = anagramSearches[0][0];
+          const secondWord = anagramSearches[0][1];
+          const count = anagramSearches[1];
+          return (
+            <li key={index}>
+              {firstWord} vs {secondWord}, {count}
+            </li>
+          );
+        })}
+      </ol>
     </div>
   );
 };
