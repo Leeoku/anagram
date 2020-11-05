@@ -6,10 +6,9 @@ CORS(app)
 
 anagram_checker = AnagramCheck()
 
-@app.route('/', methods = ['POST', 'GET'])
+@app.route('/', methods = ['POST'])
 def home():
     words = request.get_json()
-    print(words)
     first_word = words['firstWord']
     second_word = words['secondWord']
     result = anagram_checker.is_anagram(first_word, second_word)
