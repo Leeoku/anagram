@@ -21,18 +21,3 @@ code {
     monospace;
   background-color: grey;
 }
-
-.anagrampage{
-  width: 30vw;
-  display: grid;
-  gap: 2rem;
-  margin: 5rem auto;
-}
-
-/* .container {
-  width: 90vw;
-  margin: 0 auto;
-  max-width: var(--max-width);
-  text-align: center;
-  margin-top: 5rem;
-} */

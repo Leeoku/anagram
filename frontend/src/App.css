@@ -1,8 +1,4 @@
-.App {
-  text-align: center;
-}
-
-.anagrampage{
+.anagrampage {
   width: 80vw;
   display: grid;
   gap: 2rem;
@@ -16,4 +12,11 @@
   max-width: var(--max-width);
   text-align: center;
   margin-top: 5rem;
+}
+
+body{
+  height: 100%;
+  margin: 0;
+  background-color: #f2e9e4;
+
 }

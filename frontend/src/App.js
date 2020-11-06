@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import AnagramCheck from "./components/AnagramCheck";
 import TopAnagrams from "./components/TopAnagrams";
 import axios from "axios";
+import "./App.css";
 
 function App() {
   /** Expected schema from Flask
    * [[["wolf", "flow"], 4], [["on", "no"], 77]]
    */
   const [topAnagrams, setTopAnagrams] = useState([]);
+  const [isAnagram, setIsAnagram] = useState([]);
+
   function processYourResponse(response) {
-    //parse json into array
     const cleanResponse = response["data"];
     return cleanResponse;
   }
@@ -19,6 +21,7 @@ function App() {
       (response) => {
         const updatedTopAnagrams = processYourResponse(response);
         setTopAnagrams(updatedTopAnagrams);
+        document.getElementById("wordform").reset();
       },
       (error) => {
         console.log(error);

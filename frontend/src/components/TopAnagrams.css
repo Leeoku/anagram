@@ -1,0 +1,15 @@
+.anagramtable{
+    border: 2px solid;
+    border-collapse: collapse;
+    background-color: #9a8c98;
+    width: 100%;
+    text-align: center;
+}
+
+table td{
+    border: 1px solid;
+}
+
+table th{
+    border: 1px solid;
+}
