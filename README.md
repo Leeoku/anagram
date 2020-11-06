@@ -19,7 +19,7 @@ This is a simple web app to check if two words being inputted are inputted. **No
 - Clone repository to working area
 - Backend
   - Change working terminal to the backend folder
-  - Start a virtual environment `python3 -m env`
+  - Start a virtual environment `python3 -m venv env`
   - Install requirements `pip install requirements.txt`
 - Frontend
   - Change working terminal to frontend folder
