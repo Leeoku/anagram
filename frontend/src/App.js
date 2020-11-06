@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import AnagramCheck from "./components/AnagramCheck";
 import TopAnagrams from "./components/TopAnagrams";
 import axios from "axios";
@@ -8,9 +8,11 @@ function App() {
   /** Expected schema from Flask
    * [[["wolf", "flow"], 4], [["on", "no"], 77]]
    */
+  useEffect(() => {
+    document.title = "Anagram Tester";
+  }, []);
+  
   const [topAnagrams, setTopAnagrams] = useState([]);
-  const [isAnagram, setIsAnagram] = useState([]);
-
   function processYourResponse(response) {
     const cleanResponse = response["data"];
     return cleanResponse;
