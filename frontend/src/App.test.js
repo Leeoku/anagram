@@ -1,9 +1,11 @@
-// import { ExpansionPanelActions, RootRef } from '@material-ui/core';
-import { render, unmountComponentAtNode } from '@testing-library/react';
+import { render, unmountComponentAtNode } from "@testing-library/react";
 import React from "react";
 import App from './App';
-import { act } from "react-dom/test-utils";
-import { ExpansionPanelActions } from '@material-ui/core';
+import axios from "axios";
+
+/*Test Plan
+Test JSON data is accepted and the data returns an array in processYourResponse
+*/
 
 let container = null;
 beforeEach(() => {
@@ -19,21 +21,17 @@ afterEach(() => {
   container = null;
 });
 
-// test('renders learn react link', () => {
-//   render(<App />);
-//   const linkElement = screen.getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
+jest.mock("axios");
+
+// test("Good response", () => {
+//   axios.get.mockImplementation(() =>
+//     Promise.resolve({
+//       data: [
+//         [["wolf", "flow"], 4],
+//         [["on", "no"], 77],
+//       ],
+//     })
+//   );
+//   expect mockRefreshAnagrams.mock.response
+//   // ...
 // });
-
-// test("renders correct content", () => {
-//   const root = document.createElement("div");
-//   render(<App/>, root);
-//   expect(root.querySelector("h1").textContent).toBe("Anagram Tester");
-// })
-
-it("renders correct content", () => {
-  act(() => {
-    render(<App/>, container);
-  });
-  ExpansionPanelActions(container.textContent).toBe("Anagram Tester");
-});

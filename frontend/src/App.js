@@ -5,9 +5,9 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
-  /** Expected schema from Flask
-   * [[["wolf", "flow"], 4], [["on", "no"], 77]]
-   */
+  /* Expected schema from Flask data
+  [[["wolf", "flow"], 4], [["on", "no"], 77]]
+  */
   useEffect(() => {
     document.title = "Anagram Tester";
   }, []);
@@ -23,7 +23,6 @@ function App() {
       (response) => {
         const updatedTopAnagrams = processYourResponse(response);
         setTopAnagrams(updatedTopAnagrams);
-        document.getElementById("wordform").reset();
       },
       (error) => {
         console.log(error);
