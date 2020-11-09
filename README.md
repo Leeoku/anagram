@@ -30,10 +30,12 @@ This is a simple web app to check if two words being inputted are inputted. **No
 - Open two terminals with working directory in `"./anagrams/frontend"`
 - With the first terminal, run the frontend server with `yarn start`
 - With the second terminal, run the backend server with `yarn start-api`. This will run the virtual environment assuming it is named **env**
+- In a web browser, navigate to address `http://localhost:3000/`
 
 ## Testing
 
 - Backend
+
   - Ensure you are in the backend folder with virtual environment enabled
   - `python3 -m unittest`
 
