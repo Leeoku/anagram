@@ -19,10 +19,15 @@ def home():
     result = anagram_checker.is_anagram(first_word, second_word)
     return str(result)
 
-@app.route('/top', methods = ['GET'])
+@app.route('/top', methods = ['GET', 'POST'])
 def get_top_searches():
-    # Method to get the top 10 searches for anagrams
-    return jsonify(anagram_checker.get_anagram_count_top(10))
+    if request.method == 'POST':
+        anagram_checker.reset_anagram()
+        return jsonify(anagram_checker.get_anagram_count_top(10))
+    if request.method == 'GET':
+        # Method to get the top 10 searches for anagrams
+        return jsonify(anagram_checker.get_anagram_count_top(10))
+
     
 if __name__ == '__main__':
     app.run(debug = True)

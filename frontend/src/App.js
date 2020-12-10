@@ -29,12 +29,29 @@ function App() {
       }
     );
   }
+
+  // function deleteAnagrams(){
+  //   console.log(topAnagrams);
+  //   axios.push("/top").then(
+  //     (response) =>{
+  //       setTopAnagrams([])
+  //     },
+  //     (error) =>{
+  //       console.log(error);
+  //     }
+  //   )
+  // }
+
   return (
     <div className="anagrampage">
       <AnagramCheck afterFormSubmit={() => refreshAnagrams()} />
-      <TopAnagrams anagrams={topAnagrams} />
+      <TopAnagrams
+        afterFormSubmit={() => refreshAnagrams()}
+        anagrams={topAnagrams}
+      />
     </div>
   );
 }
 
+// afterFormSubmit={() => deleteAnagrams()}
 export default App;

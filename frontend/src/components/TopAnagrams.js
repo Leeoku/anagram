@@ -1,12 +1,30 @@
 import React from "react";
 import "./TopAnagrams.css";
+import Button from "@material-ui/core/Button";
+import axios from "axios";
 
 const TopAnagrams = (props) => {
   const anagramSearches = props.anagrams;
+  const deleteHandler = (e) => {
+    e.preventDefault();
+    axios.post("/top").then(
+      (response) => {
+        console.log(anagramSearches)
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
   return (
     <div className="container">
       <h2>Top Anagram Searches*</h2>
       <p>*Searches may not be anagrams!</p>
+      <form id="resettable" onSubmit={deleteHandler}>
+        <Button variant="contained" color="primary" type="submit">
+          Reset
+        </Button>
+      </form>
       <table className="anagramtable">
         <thead>
           <tr>

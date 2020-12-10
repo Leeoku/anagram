@@ -14,3 +14,5 @@ class AnagramCheck:
 #Take the counter object of all words and return top searches    
     def get_anagram_count_top(self, n):
         return self.anagram_counter.most_common(n)
+    def reset_anagram(self):
+        self.anagram_counter.clear()
