@@ -14,6 +14,7 @@ def home():
     # secondWord: secondWord,
     # }
     words = request.get_json()
+    print(words)
     first_word = words['firstWord']
     second_word = words['secondWord']
     result = anagram_checker.is_anagram(first_word, second_word)
@@ -30,4 +31,4 @@ def get_top_searches():
 
     
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run()
