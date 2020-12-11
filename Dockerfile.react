@@ -1,0 +1,11 @@
+FROM node:latest
+
+# Copy package files and install app dependencies
+COPY /frontend/package-json /anagram
+RUN yarn install
+
+# Add React app to working directory
+ADD . /anagram
+
+# Start the React app
+CMD ["yarn", "start"]

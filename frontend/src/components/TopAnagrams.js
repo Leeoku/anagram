@@ -7,7 +7,7 @@ const TopAnagrams = (props) => {
   const anagramSearches = props.anagrams;
   const deleteHandler = (e) => {
     e.preventDefault();
-    axios.post("/top").then(
+    axios.post("/api/top").then(
       (response) => {
         console.log(anagramSearches)
       },

@@ -19,7 +19,7 @@ function App() {
   }
 
   function refreshAnagrams() {
-    axios.get("/top").then(
+    axios.get("/api/top").then(
       (response) => {
         const updatedTopAnagrams = processYourResponse(response);
         setTopAnagrams(updatedTopAnagrams);

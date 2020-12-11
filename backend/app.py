@@ -6,7 +6,7 @@ CORS(app)
 
 anagram_checker = AnagramCheck()
 
-@app.route('/', methods = ['POST'])
+@app.route('/api/is_anagram', methods = ['POST'])
 def home():
     # Expected JSON POST response from React
     # {
@@ -20,7 +20,7 @@ def home():
     result = anagram_checker.is_anagram(first_word, second_word)
     return str(result)
 
-@app.route('/top', methods = ['GET', 'POST'])
+@app.route('/api/top', methods = ['GET', 'POST'])
 def get_top_searches():
     if request.method == 'POST':
         anagram_checker.reset_anagram()

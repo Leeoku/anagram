@@ -1,0 +1,9 @@
+FROM python:latest
+WORKDIR /anagram
+COPY requirements.txt /anagram
+COPY /backend/ /anagram
+
+RUN pip install -r requirements.txt
+
+
+CMD ["gunicorn", "-b", "0.0.0.0:8000", "--workers 2", "--threads", "4", "wsgi:app"]

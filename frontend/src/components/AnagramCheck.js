@@ -13,7 +13,7 @@ const AnagramCheck = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
       axios
-        .post("/", {
+        .post("/api/is_anagram", {
           firstWord: firstWord,
           secondWord: secondWord,
         })
