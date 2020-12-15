@@ -1,11 +1,12 @@
 FROM node:latest
 
+WORKDIR /anagram/frontend
 # Copy package files and install app dependencies
-COPY /frontend/package-json /anagram
+COPY frontend/package.json /anagram/frontend/package.json
 RUN yarn install
 
 # Add React app to working directory
 ADD . /anagram
 
 # Start the React app
-CMD ["yarn", "start"]
+CMD ["yarn", "run", "start"]

@@ -4,14 +4,16 @@ services:
     build:
       context: .
       dockerfile: Dockerfile.python
+    ports:
+      - "8000:8000"
     volumes:
       -  ./backend:/anagram
-  react:
-    build:
-      context: .
-      dockerfile: Dockerfile.react
-    ports:
-    - "3000:3000"
-    stdin_open: true
-    volumes:
-      - .:/anagram
+  # react:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.react
+  #   ports:
+  #   - "3000:3000"
+  #   stdin_open: true
+  #   volumes:
+  #     - .:/anagram
