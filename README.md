@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a simple web app to check if two words being inputted are inputted. **Note there is no API added to check if inputs are valid words**
+This is a simple web app to check if two words being inputted are anagrams. **Note there is no API added to check if inputs are valid words**
 
 ![Alt text](/anagram.png "Anagram Sample Image")
 
